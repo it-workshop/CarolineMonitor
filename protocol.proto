@@ -1,6 +1,26 @@
 option java_package = "com.technoworks.CarolineMonitor";
 option optimize_for = LITE_RUNTIME;
 
+message Message
+{
+    enum Type
+    {
+        IMAGES = 1;
+        OPTICAL_FLOW = 2;
+        DEPTH_MAP = 3;
+        MODEL = 4;
+        LOG = 5;
+    }
+
+    required Type type = 1;
+
+    optional Images images = 2;
+    optional OpticalFlow optical_flow = 3;
+    optional DepthMap depth_map = 4;
+    optional Model model = 5;
+    optional Log log = 6;
+}
+
 message Images
 {
     required Image left = 1;

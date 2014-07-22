@@ -8,6 +8,1082 @@ public final class Protocol {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+  public interface MessageOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required .Message.Type type = 1;
+    /**
+     * <code>required .Message.Type type = 1;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>required .Message.Type type = 1;</code>
+     */
+    com.technoworks.CarolineMonitor.Protocol.Message.Type getType();
+
+    // optional .Images images = 2;
+    /**
+     * <code>optional .Images images = 2;</code>
+     */
+    boolean hasImages();
+    /**
+     * <code>optional .Images images = 2;</code>
+     */
+    com.technoworks.CarolineMonitor.Protocol.Images getImages();
+
+    // optional .OpticalFlow optical_flow = 3;
+    /**
+     * <code>optional .OpticalFlow optical_flow = 3;</code>
+     */
+    boolean hasOpticalFlow();
+    /**
+     * <code>optional .OpticalFlow optical_flow = 3;</code>
+     */
+    com.technoworks.CarolineMonitor.Protocol.OpticalFlow getOpticalFlow();
+
+    // optional .DepthMap depth_map = 4;
+    /**
+     * <code>optional .DepthMap depth_map = 4;</code>
+     */
+    boolean hasDepthMap();
+    /**
+     * <code>optional .DepthMap depth_map = 4;</code>
+     */
+    com.technoworks.CarolineMonitor.Protocol.DepthMap getDepthMap();
+
+    // optional .Model model = 5;
+    /**
+     * <code>optional .Model model = 5;</code>
+     */
+    boolean hasModel();
+    /**
+     * <code>optional .Model model = 5;</code>
+     */
+    com.technoworks.CarolineMonitor.Protocol.Model getModel();
+
+    // optional .Log log = 6;
+    /**
+     * <code>optional .Log log = 6;</code>
+     */
+    boolean hasLog();
+    /**
+     * <code>optional .Log log = 6;</code>
+     */
+    com.technoworks.CarolineMonitor.Protocol.Log getLog();
+  }
+  /**
+   * Protobuf type {@code Message}
+   */
+  public static final class Message extends
+      com.google.protobuf.GeneratedMessageLite
+      implements MessageOrBuilder {
+    // Use Message.newBuilder() to construct.
+    private Message(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private Message(boolean noInit) {}
+
+    private static final Message defaultInstance;
+    public static Message getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Message getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private Message(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              com.technoworks.CarolineMonitor.Protocol.Message.Type value = com.technoworks.CarolineMonitor.Protocol.Message.Type.valueOf(rawValue);
+              if (value != null) {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              com.technoworks.CarolineMonitor.Protocol.Images.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = images_.toBuilder();
+              }
+              images_ = input.readMessage(com.technoworks.CarolineMonitor.Protocol.Images.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(images_);
+                images_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              com.technoworks.CarolineMonitor.Protocol.OpticalFlow.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = opticalFlow_.toBuilder();
+              }
+              opticalFlow_ = input.readMessage(com.technoworks.CarolineMonitor.Protocol.OpticalFlow.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(opticalFlow_);
+                opticalFlow_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 34: {
+              com.technoworks.CarolineMonitor.Protocol.DepthMap.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = depthMap_.toBuilder();
+              }
+              depthMap_ = input.readMessage(com.technoworks.CarolineMonitor.Protocol.DepthMap.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(depthMap_);
+                depthMap_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+            case 42: {
+              com.technoworks.CarolineMonitor.Protocol.Model.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = model_.toBuilder();
+              }
+              model_ = input.readMessage(com.technoworks.CarolineMonitor.Protocol.Model.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(model_);
+                model_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+            case 50: {
+              com.technoworks.CarolineMonitor.Protocol.Log.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                subBuilder = log_.toBuilder();
+              }
+              log_ = input.readMessage(com.technoworks.CarolineMonitor.Protocol.Log.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(log_);
+                log_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000020;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<Message> PARSER =
+        new com.google.protobuf.AbstractParser<Message>() {
+      public Message parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Message(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Message> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code Message.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>IMAGES = 1;</code>
+       */
+      IMAGES(0, 1),
+      /**
+       * <code>OPTICAL_FLOW = 2;</code>
+       */
+      OPTICAL_FLOW(1, 2),
+      /**
+       * <code>DEPTH_MAP = 3;</code>
+       */
+      DEPTH_MAP(2, 3),
+      /**
+       * <code>MODEL = 4;</code>
+       */
+      MODEL(3, 4),
+      /**
+       * <code>LOG = 5;</code>
+       */
+      LOG(4, 5),
+      ;
+
+      /**
+       * <code>IMAGES = 1;</code>
+       */
+      public static final int IMAGES_VALUE = 1;
+      /**
+       * <code>OPTICAL_FLOW = 2;</code>
+       */
+      public static final int OPTICAL_FLOW_VALUE = 2;
+      /**
+       * <code>DEPTH_MAP = 3;</code>
+       */
+      public static final int DEPTH_MAP_VALUE = 3;
+      /**
+       * <code>MODEL = 4;</code>
+       */
+      public static final int MODEL_VALUE = 4;
+      /**
+       * <code>LOG = 5;</code>
+       */
+      public static final int LOG_VALUE = 5;
+
+
+      public final int getNumber() { return value; }
+
+      public static Type valueOf(int value) {
+        switch (value) {
+          case 1: return IMAGES;
+          case 2: return OPTICAL_FLOW;
+          case 3: return DEPTH_MAP;
+          case 4: return MODEL;
+          case 5: return LOG;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.valueOf(number);
+              }
+            };
+
+      private final int value;
+
+      private Type(int index, int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:Message.Type)
+    }
+
+    private int bitField0_;
+    // required .Message.Type type = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private com.technoworks.CarolineMonitor.Protocol.Message.Type type_;
+    /**
+     * <code>required .Message.Type type = 1;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .Message.Type type = 1;</code>
+     */
+    public com.technoworks.CarolineMonitor.Protocol.Message.Type getType() {
+      return type_;
+    }
+
+    // optional .Images images = 2;
+    public static final int IMAGES_FIELD_NUMBER = 2;
+    private com.technoworks.CarolineMonitor.Protocol.Images images_;
+    /**
+     * <code>optional .Images images = 2;</code>
+     */
+    public boolean hasImages() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .Images images = 2;</code>
+     */
+    public com.technoworks.CarolineMonitor.Protocol.Images getImages() {
+      return images_;
+    }
+
+    // optional .OpticalFlow optical_flow = 3;
+    public static final int OPTICAL_FLOW_FIELD_NUMBER = 3;
+    private com.technoworks.CarolineMonitor.Protocol.OpticalFlow opticalFlow_;
+    /**
+     * <code>optional .OpticalFlow optical_flow = 3;</code>
+     */
+    public boolean hasOpticalFlow() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .OpticalFlow optical_flow = 3;</code>
+     */
+    public com.technoworks.CarolineMonitor.Protocol.OpticalFlow getOpticalFlow() {
+      return opticalFlow_;
+    }
+
+    // optional .DepthMap depth_map = 4;
+    public static final int DEPTH_MAP_FIELD_NUMBER = 4;
+    private com.technoworks.CarolineMonitor.Protocol.DepthMap depthMap_;
+    /**
+     * <code>optional .DepthMap depth_map = 4;</code>
+     */
+    public boolean hasDepthMap() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .DepthMap depth_map = 4;</code>
+     */
+    public com.technoworks.CarolineMonitor.Protocol.DepthMap getDepthMap() {
+      return depthMap_;
+    }
+
+    // optional .Model model = 5;
+    public static final int MODEL_FIELD_NUMBER = 5;
+    private com.technoworks.CarolineMonitor.Protocol.Model model_;
+    /**
+     * <code>optional .Model model = 5;</code>
+     */
+    public boolean hasModel() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .Model model = 5;</code>
+     */
+    public com.technoworks.CarolineMonitor.Protocol.Model getModel() {
+      return model_;
+    }
+
+    // optional .Log log = 6;
+    public static final int LOG_FIELD_NUMBER = 6;
+    private com.technoworks.CarolineMonitor.Protocol.Log log_;
+    /**
+     * <code>optional .Log log = 6;</code>
+     */
+    public boolean hasLog() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional .Log log = 6;</code>
+     */
+    public com.technoworks.CarolineMonitor.Protocol.Log getLog() {
+      return log_;
+    }
+
+    private void initFields() {
+      type_ = com.technoworks.CarolineMonitor.Protocol.Message.Type.IMAGES;
+      images_ = com.technoworks.CarolineMonitor.Protocol.Images.getDefaultInstance();
+      opticalFlow_ = com.technoworks.CarolineMonitor.Protocol.OpticalFlow.getDefaultInstance();
+      depthMap_ = com.technoworks.CarolineMonitor.Protocol.DepthMap.getDefaultInstance();
+      model_ = com.technoworks.CarolineMonitor.Protocol.Model.getDefaultInstance();
+      log_ = com.technoworks.CarolineMonitor.Protocol.Log.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasImages()) {
+        if (!getImages().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasOpticalFlow()) {
+        if (!getOpticalFlow().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasDepthMap()) {
+        if (!getDepthMap().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasModel()) {
+        if (!getModel().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasLog()) {
+        if (!getLog().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, images_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, opticalFlow_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, depthMap_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, model_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeMessage(6, log_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, images_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, opticalFlow_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, depthMap_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, model_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, log_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.technoworks.CarolineMonitor.Protocol.Message parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.technoworks.CarolineMonitor.Protocol.Message prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code Message}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.technoworks.CarolineMonitor.Protocol.Message, Builder>
+        implements com.technoworks.CarolineMonitor.Protocol.MessageOrBuilder {
+      // Construct using com.technoworks.CarolineMonitor.Protocol.Message.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        type_ = com.technoworks.CarolineMonitor.Protocol.Message.Type.IMAGES;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        images_ = com.technoworks.CarolineMonitor.Protocol.Images.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        opticalFlow_ = com.technoworks.CarolineMonitor.Protocol.OpticalFlow.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        depthMap_ = com.technoworks.CarolineMonitor.Protocol.DepthMap.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        model_ = com.technoworks.CarolineMonitor.Protocol.Model.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        log_ = com.technoworks.CarolineMonitor.Protocol.Log.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.technoworks.CarolineMonitor.Protocol.Message getDefaultInstanceForType() {
+        return com.technoworks.CarolineMonitor.Protocol.Message.getDefaultInstance();
+      }
+
+      public com.technoworks.CarolineMonitor.Protocol.Message build() {
+        com.technoworks.CarolineMonitor.Protocol.Message result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.technoworks.CarolineMonitor.Protocol.Message buildPartial() {
+        com.technoworks.CarolineMonitor.Protocol.Message result = new com.technoworks.CarolineMonitor.Protocol.Message(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.images_ = images_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.opticalFlow_ = opticalFlow_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.depthMap_ = depthMap_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.model_ = model_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.log_ = log_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(com.technoworks.CarolineMonitor.Protocol.Message other) {
+        if (other == com.technoworks.CarolineMonitor.Protocol.Message.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasImages()) {
+          mergeImages(other.getImages());
+        }
+        if (other.hasOpticalFlow()) {
+          mergeOpticalFlow(other.getOpticalFlow());
+        }
+        if (other.hasDepthMap()) {
+          mergeDepthMap(other.getDepthMap());
+        }
+        if (other.hasModel()) {
+          mergeModel(other.getModel());
+        }
+        if (other.hasLog()) {
+          mergeLog(other.getLog());
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        if (hasImages()) {
+          if (!getImages().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasOpticalFlow()) {
+          if (!getOpticalFlow().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasDepthMap()) {
+          if (!getDepthMap().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasModel()) {
+          if (!getModel().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasLog()) {
+          if (!getLog().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.technoworks.CarolineMonitor.Protocol.Message parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.technoworks.CarolineMonitor.Protocol.Message) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required .Message.Type type = 1;
+      private com.technoworks.CarolineMonitor.Protocol.Message.Type type_ = com.technoworks.CarolineMonitor.Protocol.Message.Type.IMAGES;
+      /**
+       * <code>required .Message.Type type = 1;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .Message.Type type = 1;</code>
+       */
+      public com.technoworks.CarolineMonitor.Protocol.Message.Type getType() {
+        return type_;
+      }
+      /**
+       * <code>required .Message.Type type = 1;</code>
+       */
+      public Builder setType(com.technoworks.CarolineMonitor.Protocol.Message.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required .Message.Type type = 1;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = com.technoworks.CarolineMonitor.Protocol.Message.Type.IMAGES;
+        
+        return this;
+      }
+
+      // optional .Images images = 2;
+      private com.technoworks.CarolineMonitor.Protocol.Images images_ = com.technoworks.CarolineMonitor.Protocol.Images.getDefaultInstance();
+      /**
+       * <code>optional .Images images = 2;</code>
+       */
+      public boolean hasImages() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .Images images = 2;</code>
+       */
+      public com.technoworks.CarolineMonitor.Protocol.Images getImages() {
+        return images_;
+      }
+      /**
+       * <code>optional .Images images = 2;</code>
+       */
+      public Builder setImages(com.technoworks.CarolineMonitor.Protocol.Images value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        images_ = value;
+
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Images images = 2;</code>
+       */
+      public Builder setImages(
+          com.technoworks.CarolineMonitor.Protocol.Images.Builder builderForValue) {
+        images_ = builderForValue.build();
+
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Images images = 2;</code>
+       */
+      public Builder mergeImages(com.technoworks.CarolineMonitor.Protocol.Images value) {
+        if (((bitField0_ & 0x00000002) == 0x00000002) &&
+            images_ != com.technoworks.CarolineMonitor.Protocol.Images.getDefaultInstance()) {
+          images_ =
+            com.technoworks.CarolineMonitor.Protocol.Images.newBuilder(images_).mergeFrom(value).buildPartial();
+        } else {
+          images_ = value;
+        }
+
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Images images = 2;</code>
+       */
+      public Builder clearImages() {
+        images_ = com.technoworks.CarolineMonitor.Protocol.Images.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      // optional .OpticalFlow optical_flow = 3;
+      private com.technoworks.CarolineMonitor.Protocol.OpticalFlow opticalFlow_ = com.technoworks.CarolineMonitor.Protocol.OpticalFlow.getDefaultInstance();
+      /**
+       * <code>optional .OpticalFlow optical_flow = 3;</code>
+       */
+      public boolean hasOpticalFlow() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .OpticalFlow optical_flow = 3;</code>
+       */
+      public com.technoworks.CarolineMonitor.Protocol.OpticalFlow getOpticalFlow() {
+        return opticalFlow_;
+      }
+      /**
+       * <code>optional .OpticalFlow optical_flow = 3;</code>
+       */
+      public Builder setOpticalFlow(com.technoworks.CarolineMonitor.Protocol.OpticalFlow value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        opticalFlow_ = value;
+
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .OpticalFlow optical_flow = 3;</code>
+       */
+      public Builder setOpticalFlow(
+          com.technoworks.CarolineMonitor.Protocol.OpticalFlow.Builder builderForValue) {
+        opticalFlow_ = builderForValue.build();
+
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .OpticalFlow optical_flow = 3;</code>
+       */
+      public Builder mergeOpticalFlow(com.technoworks.CarolineMonitor.Protocol.OpticalFlow value) {
+        if (((bitField0_ & 0x00000004) == 0x00000004) &&
+            opticalFlow_ != com.technoworks.CarolineMonitor.Protocol.OpticalFlow.getDefaultInstance()) {
+          opticalFlow_ =
+            com.technoworks.CarolineMonitor.Protocol.OpticalFlow.newBuilder(opticalFlow_).mergeFrom(value).buildPartial();
+        } else {
+          opticalFlow_ = value;
+        }
+
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .OpticalFlow optical_flow = 3;</code>
+       */
+      public Builder clearOpticalFlow() {
+        opticalFlow_ = com.technoworks.CarolineMonitor.Protocol.OpticalFlow.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      // optional .DepthMap depth_map = 4;
+      private com.technoworks.CarolineMonitor.Protocol.DepthMap depthMap_ = com.technoworks.CarolineMonitor.Protocol.DepthMap.getDefaultInstance();
+      /**
+       * <code>optional .DepthMap depth_map = 4;</code>
+       */
+      public boolean hasDepthMap() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .DepthMap depth_map = 4;</code>
+       */
+      public com.technoworks.CarolineMonitor.Protocol.DepthMap getDepthMap() {
+        return depthMap_;
+      }
+      /**
+       * <code>optional .DepthMap depth_map = 4;</code>
+       */
+      public Builder setDepthMap(com.technoworks.CarolineMonitor.Protocol.DepthMap value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        depthMap_ = value;
+
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .DepthMap depth_map = 4;</code>
+       */
+      public Builder setDepthMap(
+          com.technoworks.CarolineMonitor.Protocol.DepthMap.Builder builderForValue) {
+        depthMap_ = builderForValue.build();
+
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .DepthMap depth_map = 4;</code>
+       */
+      public Builder mergeDepthMap(com.technoworks.CarolineMonitor.Protocol.DepthMap value) {
+        if (((bitField0_ & 0x00000008) == 0x00000008) &&
+            depthMap_ != com.technoworks.CarolineMonitor.Protocol.DepthMap.getDefaultInstance()) {
+          depthMap_ =
+            com.technoworks.CarolineMonitor.Protocol.DepthMap.newBuilder(depthMap_).mergeFrom(value).buildPartial();
+        } else {
+          depthMap_ = value;
+        }
+
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .DepthMap depth_map = 4;</code>
+       */
+      public Builder clearDepthMap() {
+        depthMap_ = com.technoworks.CarolineMonitor.Protocol.DepthMap.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      // optional .Model model = 5;
+      private com.technoworks.CarolineMonitor.Protocol.Model model_ = com.technoworks.CarolineMonitor.Protocol.Model.getDefaultInstance();
+      /**
+       * <code>optional .Model model = 5;</code>
+       */
+      public boolean hasModel() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .Model model = 5;</code>
+       */
+      public com.technoworks.CarolineMonitor.Protocol.Model getModel() {
+        return model_;
+      }
+      /**
+       * <code>optional .Model model = 5;</code>
+       */
+      public Builder setModel(com.technoworks.CarolineMonitor.Protocol.Model value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        model_ = value;
+
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Model model = 5;</code>
+       */
+      public Builder setModel(
+          com.technoworks.CarolineMonitor.Protocol.Model.Builder builderForValue) {
+        model_ = builderForValue.build();
+
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Model model = 5;</code>
+       */
+      public Builder mergeModel(com.technoworks.CarolineMonitor.Protocol.Model value) {
+        if (((bitField0_ & 0x00000010) == 0x00000010) &&
+            model_ != com.technoworks.CarolineMonitor.Protocol.Model.getDefaultInstance()) {
+          model_ =
+            com.technoworks.CarolineMonitor.Protocol.Model.newBuilder(model_).mergeFrom(value).buildPartial();
+        } else {
+          model_ = value;
+        }
+
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Model model = 5;</code>
+       */
+      public Builder clearModel() {
+        model_ = com.technoworks.CarolineMonitor.Protocol.Model.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      // optional .Log log = 6;
+      private com.technoworks.CarolineMonitor.Protocol.Log log_ = com.technoworks.CarolineMonitor.Protocol.Log.getDefaultInstance();
+      /**
+       * <code>optional .Log log = 6;</code>
+       */
+      public boolean hasLog() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .Log log = 6;</code>
+       */
+      public com.technoworks.CarolineMonitor.Protocol.Log getLog() {
+        return log_;
+      }
+      /**
+       * <code>optional .Log log = 6;</code>
+       */
+      public Builder setLog(com.technoworks.CarolineMonitor.Protocol.Log value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        log_ = value;
+
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Log log = 6;</code>
+       */
+      public Builder setLog(
+          com.technoworks.CarolineMonitor.Protocol.Log.Builder builderForValue) {
+        log_ = builderForValue.build();
+
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Log log = 6;</code>
+       */
+      public Builder mergeLog(com.technoworks.CarolineMonitor.Protocol.Log value) {
+        if (((bitField0_ & 0x00000020) == 0x00000020) &&
+            log_ != com.technoworks.CarolineMonitor.Protocol.Log.getDefaultInstance()) {
+          log_ =
+            com.technoworks.CarolineMonitor.Protocol.Log.newBuilder(log_).mergeFrom(value).buildPartial();
+        } else {
+          log_ = value;
+        }
+
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Log log = 6;</code>
+       */
+      public Builder clearLog() {
+        log_ = com.technoworks.CarolineMonitor.Protocol.Log.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Message)
+    }
+
+    static {
+      defaultInstance = new Message(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Message)
+  }
+
   public interface ImagesOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 
