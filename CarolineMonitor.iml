@@ -13,6 +13,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 20, L preview Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="protobuf-java-2.5.0-lite" level="project" />
   </component>
 </module>
 
